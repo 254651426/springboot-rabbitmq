@@ -25,7 +25,7 @@ public class MyProvider {
 
         amqpTemplate.convertAndSend("TOPIC_EXCHANGE", "changsha.gupao.student", "-------- a topic msg : changsha.gupao.student");
 
-//        amqpTemplate.convertAndSend("FANOUT_EXCHANGE", "", "-------- a fanout msg");
+        amqpTemplate.convertAndSend("FANOUT_EXCHANGE", "", "-------- a fanout msg");
 
     }
 

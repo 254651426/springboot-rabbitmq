@@ -50,6 +50,11 @@ public class RabbitConfig {
     }
 
     @Bean
+    public Binding bindfour(@Qualifier("thirdQueue") Queue queue, @Qualifier("topicExchange") TopicExchange exchange) {
+        return BindingBuilder.bind(queue).to(exchange).with("#.gupao.#");
+    }
+
+    @Bean
     public Binding bindThird(@Qualifier("thirdQueue") Queue queue, @Qualifier("fanoutExchange") FanoutExchange exchange) {
         return BindingBuilder.bind(queue).to(exchange);
     }
